@@ -1,0 +1,46 @@
+<div fxLayoutAlign="center center">
+<mat-form-field fxFlex="50%">
+  <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+</div>
+
+<mat-table [dataSource]="voznjaSource" matSort>
+  <ng-container matColumnDef="naziv">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Naziv voznje</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.naziv }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="polaziste">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Polaziste</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.polaziste }}</mat-cell>
+  </ng-container>
+    <ng-container matColumnDef="odrediste">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Odrediste</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.odrediste }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="stajalista">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Stajalista</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.stajalista }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="vremepolaska">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Vreme polaska</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.vremepolaska }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="vremedolaska">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Vreme dolaska</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.vremedolaska }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="prevoznik">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Prevooznik</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.prevoznik }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="brojmesta">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Broj mesta</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.brojmesta | number }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Status voznje</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.status }}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let rows; columns: displayedColumns;"></mat-row>
+</mat-table>

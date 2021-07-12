@@ -1,0 +1,23 @@
+form {
+    height: 500px;
+}
+
+mat-form-field {
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: black;
+}
+
+h3 {
+    text-align: center;
+}
+
+h3 mat-icon {
+    color: gold
+}

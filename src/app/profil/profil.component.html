@@ -1,0 +1,38 @@
+<section>
+  <h1>Informacije o profilu <a href="/izmeni-profil"><mat-icon matSuffix>mode_edit</mat-icon></a></h1>
+    <h3>Reputacija:<mat-icon matSuffix>star</mat-icon><mat-icon matSuffix>star</mat-icon><mat-icon matSuffix>star</mat-icon><mat-icon matSuffix>star_half</mat-icon><mat-icon matSuffix>star_border</mat-icon></h3>
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+    #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <mat-form-field>
+      <input type="name" matInput placeholder="Vase ime" ngModel name="name" required #nameInput="ngModel">
+      <mat-error *ngIf="nameInput.hasError('required')">Polje ne sme biti prazno</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input type="surname" matInput placeholder="Vase prezime" ngModel name="surname" required #surnameInput="ngModel">
+      <mat-error *ngIf="surnameInput.hasError('required')">Polje ne sme biti prazno</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="email" matInput placeholder="Vas email" ngModel name="email" email required #emailInput="ngModel">
+      <mat-error *ngIf="emailInput.hasError('required')">polje ne sme biti prazno</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">Molimo vas unesite pravi email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="password" matInput placeholder="Vasa sifra" ngModel name="password" required minlength="6" #passInput="ngModel">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Vas datum rodjenja" [matDatepicker]="picker" ngModel name="birthDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+        <span matPrefix>+381 &nbsp;</span>
+        <input type="phone" matInput placeholder="Vas broj telefona" ngModel name="phone" required #phoneInput="ngModel">
+        <mat-error *ngIf="phoneInput.hasError('required')">Polje ne sme biti prazno</mat-error>
+      </mat-form-field>
+  </form>
+</section>

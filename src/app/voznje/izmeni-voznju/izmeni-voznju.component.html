@@ -1,0 +1,52 @@
+<section fxLayout fxLayoutAlign="center">
+    <mat-card fxFlex="500px">
+      <mat-card-title fxLayoutAlign="center">
+          Izmeni voznju
+        </mat-card-title>
+        <mat-card-content fxLayoutAlign="center" fxLayoutGap="20px">
+          <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+              #f="ngForm" (ngSubmit)="onSubmit(f)">
+              <mat-form-field>
+                  <input type="text" matInput placeholder="Naziv voznje" ngModel name="text" #textInput="ngModel">
+              </mat-form-field>
+                  <mat-form-field>
+                    <input type="name" matInput placeholder="Prevoznik" ngModel name="name" required #nameInput="ngModel">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Polaziste" ngModel name="text" required #textInput="ngModel">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Odrediste" ngModel name="text" required #textInput="ngModel">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Stajalista"  ngModel name="text" required #textInput="ngModel">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="time" matInput placeholder="Vreme polaska" ngModel name="time" required #timeInput="ngModel">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="time" matInput placeholder="Vreme dolaska">
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="number" matInput placeholder="Broj mesta" ngModel name="number" required #numberInput="ngModel">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-select type="value" placeholder="Status voznje" ngModel name="text" required #valueInput="ngModel">
+                    <mat-option value="tekuca">
+                      Tekuca
+                    </mat-option>
+                    <mat-option value="zavrsena">
+                        Zavrsena
+                      </mat-option>
+                      <mat-option value="otkazana">
+                          Otkazana
+                        </mat-option>
+                  </mat-select>
+               </mat-form-field>
+          </form>
+              </mat-card-content>
+              <mat-card-actions fxLayoutAlign="center">
+              <button type="submit" onclick="location.href='/voznje';" mat-raised-button color="primary" [disabled]="f.invalid">Sacuvaj izmene</button>
+              </mat-card-actions>
+    </mat-card>
+  </section>
